@@ -1,4 +1,9 @@
 import { User } from './models/User'
 
-const user = new User({ name: 'another', age: 55 })
+const user = new User({ id: 1, name: 'newer name', age: 77 })
 
+user.on('save', () => {
+  console.log(user)
+})
+
+user.save()
